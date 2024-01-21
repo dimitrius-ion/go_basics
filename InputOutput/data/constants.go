@@ -1,13 +1,13 @@
 package data
 
 // This is a public constant
-const Constant = "Hello World"
+const publicConstant = "Public Constant"
 
 // This is a private constant
-const constant = "Hello World"
+const privateConstant = "Private Constant"
 
 
 func PrintConstant() {
-	println(Constant)
-	println(constant)
+	println(publicConstant)
+	println(privateConstant)
 }
