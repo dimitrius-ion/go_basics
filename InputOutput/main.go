@@ -17,6 +17,13 @@ func calcTax(price float64) (stateTax float64, cityTax float64) {
 
 
 func main() {
+
+	// defer will run after main function ends
+	defer println("Bye2")
+	// defer will run in reverse order
+	defer println("Bye1")
+
+
 	_, cityTax := calcTax(100)
 	println(cityTax)
 
