@@ -45,4 +45,10 @@ func forStatment () {
 	for {
 		fmt.Println("Infinite loop")
 	}
+	
+	// while loop
+	for count < 10 {
+		fmt.Println(count)
+		count++
+	}
 }
