@@ -10,7 +10,6 @@ func birthday(pointerAge *int) {
 		panic("Invalid Age")
 	}
 	*pointerAge ++
-	
 }
 
 
