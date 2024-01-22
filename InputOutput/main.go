@@ -1,6 +1,6 @@
 package main
 
-import "github.com/dimitrius-ion/go_basics/data"
+import "github.com/dimitrius-ion/go_basics/inOut/data"
 
 // can use multiple init functions 
 func init() {

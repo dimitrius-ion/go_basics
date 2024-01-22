@@ -1,17 +1,18 @@
 package main
 
-
-func ifStatement () {
-	// user,err will be local to if else block
-	if user, err := getUser(123); err != nil {
-		fmt.Println(err)
-	} else {
-		fmt.Println(user)
-	}
-	fmt.Println('user', user)
-}
+import "fmt"
+// func ifStatement () {
+// 	// user,err will be local to if else block
+// 	if user, err := getUser(123); err != nil {
+// 		fmt.Println(err)
+// 	} else {
+// 		fmt.Println(user)
+// 	}
+// 	fmt.Println('user', user)
+// }
 
 func switchStatmetn () {
+	day := "Saturday"
 	switch day {
 		case "Monday":
 			fmt. Println("It's Monday!")
@@ -37,17 +38,17 @@ func forStatment () {
 		fmt.Println(i)
 	}
 
-	for i in range 5 {
-		fmt.Println(i)
-	}
+	// for i in range 5 {
+	// 	fmt.Println(i)
+	// }
 
 	// infinite loop
 	for {
 		fmt.Println("Infinite loop")
 	}
-	
+	count:= 20
 	// while loop
-	for count < 10 {
+	for  count < 10 {
 		fmt.Println(count)
 		count++
 	}
