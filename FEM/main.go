@@ -23,11 +23,11 @@ func main() {
 	fmt.Printf("%v\n", goCourse)
 
 
-	//Workshops 
+	//Workshops extends Course
 	swiftWs := data.Workshop{Course: data.Course {Name: "Swift for iOS", Instructor: max}, Date: time.Now()}
 	fmt.Println(swiftWs)
 
-	//Workshops_Embedings
+	//Workshops Embedings Course
 	swiftWs_emb := data.Workshop_Embedding {}
 	swiftWs_emb.Name = "Swift for iOS"
 
@@ -36,13 +36,13 @@ func main() {
 	fmt.Println(swiftWs_emb, swiftWs_emb_2)
 
 
-	// var courses [2]data.Course
-	// courses[0] = goCourse
-	// courses[1] = swiftWs
+	var courses [2]data.Signable
+	courses[0] = goCourse
+	courses[1] = swiftWs_emb
 
-	// for i, course := range courses {
-	// 	fmt.Println(i, course)
-	// }
+	for i, course := range courses {
+		fmt.Println(i, course)
+	}
 }
 
 
