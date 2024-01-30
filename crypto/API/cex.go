@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"strings"
 	"io"
+	"encoding/json"
 )
 
 const apiURL = "https://cex.io/api/ticker/%s/USD"
@@ -21,14 +22,20 @@ func GetRate (currency string) (*datatypes.Rate, error) {
 		return nil, fmt.Errorf("status code: %d", res.StatusCode)
 	}
 	defer res.Body.Close()
+
 	// read body
 	bodyBytes, err := io.ReadAll(res.Body)
 	if err != nil {
 		return nil, err
 	}
-	json := string(bodyBytes)
-	fmt.Println(json)
-	rate := datatypes.Rate{Currency: upper_currency, Price: 0.0}
+	var response CEXResponse
+	json_err := json.Unmarshal(bodyBytes, &response)
+	if json_err != nil {
+		return nil, json_err
+	}
+	rate := datatypes.Rate{Currency: upper_currency, Price: response.Bid}
+	
+	
 	return &rate, nil
 	
 }
