@@ -4,10 +4,14 @@ import (
 	"github.com/dimitrius-ion/go_basics/crypto/api"
 	"fmt"
 	"time"
+	 "sync"
 )
 
 
 func main() {
+	currencies := []string{"BTC", "ETH",  "BCH"}
+	var wg sync.WaitGroup
+
 	go getCurencyData("BTC")
 	go getCurencyData("ETH")
 	time.Sleep(5 * time.Second)
