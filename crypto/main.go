@@ -10,11 +10,20 @@ import (
 
 func main() {
 	currencies := []string{"BTC", "ETH",  "BCH"}
+
+	// like a counter
 	var wg sync.WaitGroup
 
-	go getCurencyData("BTC")
-	go getCurencyData("ETH")
-	time.Sleep(5 * time.Second)
+	for _, currency := range currencies {
+		wg.Add(1)
+		
+		// lambda function runs in a separate thread
+		go func(currency string) {
+			defer wg.Done()
+			getCurencyData(currency)
+		}(currency)
+	}
+	wg.Wait()
 }
 
 func getCurencyData(currency string) {

@@ -11,6 +11,10 @@ import (
 const apiURL = "https://cex.io/api/ticker/%s/USD"
 
 func GetRate (currency string) (*datatypes.Rate, error) {
+
+	if (len(currency) != 3){
+		return nil, fmt.Errorf("Invalid currency")
+	}
 	upper_currency := strings.ToUpper(currency)
 	res, err := http.Get(fmt.Sprintf(apiURL, upper_currency))
 	
