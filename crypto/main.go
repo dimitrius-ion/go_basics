@@ -3,7 +3,6 @@ package main
 import (
 	"github.com/dimitrius-ion/go_basics/crypto/api"
 	"fmt"
-	"time"
 	 "sync"
 )
 
@@ -16,7 +15,7 @@ func main() {
 
 	for _, currency := range currencies {
 		wg.Add(1)
-		
+
 		// lambda function runs in a separate thread
 		go func(currency string) {
 			defer wg.Done()
