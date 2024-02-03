@@ -4,6 +4,7 @@ import (
 	"net/http"
 	"fmt"
 	"text/template"
+	"github.com/dimitrius-ion/go_basics/femm/data"
 )
 func handlePing (w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "pong")
@@ -14,7 +15,7 @@ func handleTemplate (w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}else{
-		html.Execute(w, "TEST VALUE")
+		html.Execute(w, data.GetAll()[1])
 	}
 }
 
