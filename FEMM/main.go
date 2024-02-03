@@ -15,7 +15,7 @@ func handleTemplate (w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}else{
-		html.Execute(w, data.GetAll()[1])
+		html.Execute(w, data.GetAll())
 	}
 }
 

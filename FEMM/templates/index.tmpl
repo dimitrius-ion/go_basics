@@ -6,11 +6,14 @@
 		<title>TEST GO</title>
 	</head>
 	<body>
-		template value: 
-		{{.Title}}
-		{{.Description}}
-		{{.URL}}
-		
+
+		{{range .}}
+		<article>
+			<h2>{{.Title}}</h2>
+			<p>{{.Description}}</p>
+			<a href="{{.URL}}">Read more...</a>
+		</article>
+		{{end}}
 		
 	</body>
 </html>
