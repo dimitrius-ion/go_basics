@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"text/template"
 	"github.com/dimitrius-ion/go_basics/femm/data"
+	"github.com/dimitrius-ion/go_basics/femm/api"
 )
 func handlePing (w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "pong")
@@ -23,7 +24,7 @@ func main() {
 	// create a new server
 	server := http.NewServeMux()
 	server.HandleFunc("/ping", handlePing)
-
+	server.HandleFunc("/api/data", api.Get)
 	server.HandleFunc("/template", handleTemplate)
 
 	fs := http.FileServer(http.Dir("./public"))

@@ -11,6 +11,7 @@
 		<article>
 			<h2>{{.Title}}</h2>
 			<p>{{.Description}}</p>
+			<div>{{if .Big}} <strong>Big</strong> {{else}}<small>Small</small> {{end}}</div>
 			<a href="{{.URL}}">Read more...</a>
 		</article>
 		{{end}}
