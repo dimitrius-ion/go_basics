@@ -31,3 +31,25 @@ go run .
 mkdir package_name
 touch package_name/package.go
 ```
+
+### install a gin package will change go.mod file
+
+```bash
+go get -u github.com/gin-gonic/gin
+```
+
+## build a go file
+
+```bash
+go build .
+```
+
+## install a go file to bin will be available to run from anywhere
+
+```bash
+go install .
+```
+
+```
+
+```
