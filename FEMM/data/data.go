@@ -12,6 +12,11 @@ func GetAll() []Things {
 	return listOfThings
 }
 
+func AddThing(t Things) {
+
+	listOfThings = append(listOfThings, t)
+}
+
 var listOfThings = []Things{
 	{
 		Title: "Spoon", 

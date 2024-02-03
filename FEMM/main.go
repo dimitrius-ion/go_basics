@@ -24,8 +24,13 @@ func main() {
 	// create a new server
 	server := http.NewServeMux()
 	server.HandleFunc("/ping", handlePing)
-	server.HandleFunc("/api/data", api.Get)
+	
+	//template
 	server.HandleFunc("/template", handleTemplate)
+	
+	//api
+	server.HandleFunc("/api/data", api.Get)
+	server.HandleFunc("/api/data/add", api.Post)
 
 	fs := http.FileServer(http.Dir("./public"))
 	server.Handle("/", fs)
